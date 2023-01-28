@@ -1,22 +1,19 @@
-import logo from './logo.svg';
+import logo from './image/banner.svg';
 import './App.css';
-
+import Navbar from './component/nav'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="w-full">
+      <Navbar/>
+      <header className="w-[80%] h-screen flex flex-col justify-center md:flex-row justify-start items-center m-auto max-w-[1240px] ">
+      <div className=''>
+        <h1 className='md:font-normal text-[2rem]'>Hello Its <span className='font-medium  text-3xl md:font-semibold text-6xl'>Wahid Ul Islam</span></h1>
+        <p className='font-normal text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sunt impedit, expedita 
+        officiis recusandae</p>
+      </div>
+      <div>
+        <img src={logo} className="h-[50vmin] " alt="logo" />
+      </div>
       </header>
     </div>
   );
