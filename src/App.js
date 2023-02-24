@@ -1,21 +1,20 @@
-import logo from './image/banner.svg';
+import React, { createContext, useState } from "react";
 import './App.css';
 import Navbar from './component/nav'
+import Hero from './component/hero'
+
+
+
+export const ThemeContext = createContext();
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="w-full">
-      <Navbar/>
-      <header className="w-[80%] h-screen flex flex-col justify-center md:flex-row justify-start items-center m-auto max-w-[1240px] ">
-      <div className=''>
-        <h1 className='md:font-normal text-[2rem]'>Hello Its <span className='font-medium  text-3xl md:font-semibold text-6xl'>Wahid Ul Islam</span></h1>
-        <p className='font-normal text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sunt impedit, expedita 
-        officiis recusandae</p>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+      <div className={darkMode ? "w-full bg-[#178e7e] text-white " : "w-full bg-[#ffffff] text-black"}>
+        <Navbar/>
+        <Hero/>
       </div>
-      <div>
-        <img src={logo} className="h-[50vmin] " alt="logo" />
-      </div>
-      </header>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
