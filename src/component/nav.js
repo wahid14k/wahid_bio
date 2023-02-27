@@ -1,7 +1,7 @@
 import React,{useState,useContext } from 'react'
 import logo from '../image/logo.svg'
 import { XMarkIcon,Bars3Icon }  from '@heroicons/react/24/outline'
-import { ThemeContext } from '../App'
+import { ThemeContext } from '../pages/home'
 
 
 export default function Navbar() {
